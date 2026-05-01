@@ -34,3 +34,60 @@
   background-color: #04aa6d;
   color: white;
 }
+
+.form-add-new {
+  width: 500px;
+  margin: 20px auto;
+}
+
+fieldset {
+  padding: 10px;
+  border: 2px solid;
+}
+
+legend {
+  padding: 10px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: inline-block;
+  width: 50px;
+  font-size: bold;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.btn-save-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-save {
+  cursor: pointer;
+  padding: 7px 20px;
+  border-radius: 5px;
+  background: #007bff;
+  border: none;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+input {
+  outline: none;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
