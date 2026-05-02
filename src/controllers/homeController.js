@@ -25,8 +25,16 @@ const getCreateUserPage = (req, res) => {
   return res.render("create");
 };
 
-const getUpdateUserPage = (req, res) => {
-  return res.render("update");
+const getUpdateUserPage = async (req, res) => {
+  const userId = req.params.id;
+  const [results, fields] = await connection.query(
+    "SELECT * FROM Users WHERE id = ?",
+    [userId],
+  );
+  console.log(">>> check results: ", results[0]);
+
+  const user = results && results.length > 0 ? results[0] : {};
+  return res.render("update", { user: user });
 };
 
 module.exports = {
