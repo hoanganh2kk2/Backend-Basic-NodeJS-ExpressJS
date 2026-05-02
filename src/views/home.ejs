@@ -20,7 +20,7 @@
     }
 
     tr:hover {
-      background-color: coral;
+      background-color: #ccc;
     }
 
     .table-container {
@@ -32,6 +32,28 @@
       font-weight: 600;
       padding-bottom: 10px;
     }
+
+    td button {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+td button:first-child {
+  background-color: #4CAF50; /* Edit */
+  color: white;
+}
+
+td button:last-child {
+  background-color: #f44336; /* Delete */
+  color: white;
+}
+
+td button:hover {
+  opacity: 0.8;
+}
   </style>
 
   <body>
@@ -40,26 +62,30 @@
       <a href="/create">Create Users</a>
     </div>
     <div class="table-container">
-      <%= JSON.stringify(listUsers) %>
       <div class="title">List Users</div>
       <table>
-        <tr>
-          <th>ID</th>
-          <th>Email</th>
-          <th>Name</th>
-          <th>City</th>
-          <th>Actions</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>test@gmail.com</td>
-          <td>test@gmail.com</td>
-          <td>test@gmail.com</td>
-          <td>
-            <button>Edit</button>
-            <button>Delete</button>
-          </td>
-        </tr>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Actions</th>
+          </tr>
+        <% listUsers.forEach(function (user) {
+          %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.name %></td>
+            <td><%= user.city %></td>
+            <td>
+              <button>Edit</button>
+              <button>Delete</button>
+            </td>
+          </tr>
+          <%
+        }); %>
+
       </table>
     </div>
   </body>
