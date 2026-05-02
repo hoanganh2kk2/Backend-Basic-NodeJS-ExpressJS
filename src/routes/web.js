@@ -4,6 +4,7 @@ const {
   checkHelloWorld,
   postCreateUser,
   getCreateUserPage,
+  getUpdateUserPage,
 } = require("../controllers/homeController");
 
 const router = express.Router();
@@ -15,5 +16,7 @@ router.get("/sample", checkHelloWorld);
 router.post("/create-user", postCreateUser);
 
 router.get("/create", getCreateUserPage);
+
+router.get("/update", getUpdateUserPage);
 
 module.exports = router;

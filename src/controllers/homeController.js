@@ -25,9 +25,14 @@ const getCreateUserPage = (req, res) => {
   return res.render("create");
 };
 
+const getUpdateUserPage = (req, res) => {
+  return res.render("update");
+};
+
 module.exports = {
   getHomepage,
   checkHelloWorld,
   postCreateUser,
   getCreateUserPage,
+  getUpdateUserPage,
 };
